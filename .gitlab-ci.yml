@@ -27,6 +27,10 @@ format:
     - go fmt $(go list ./... | grep -v /vendor/)
     - go vet $(go list ./... | grep -v /vendor/)
     - go test -race $(go list ./... | grep -v /vendor/)
+  tags:
+    - docker
+    - linux
+
 
 compile:
   stage: build
@@ -35,3 +39,6 @@ compile:
   artifacts:
     paths:
       - y2kpos
+  tags:
+    - docker
+    - linux
